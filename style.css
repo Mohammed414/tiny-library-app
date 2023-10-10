@@ -1,0 +1,231 @@
+:root {
+  --clr-primary-400: hsl(220, 79%, 52%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-400: hsla(218, 57%, 97%, 0.75);
+  --clr-neutral-500: hsl(220, 33%, 98%);
+  --clr-neutral-700: hsla(220, 16%, 33%, 1);
+  --clr-neutral-900: hsla(220, 25%, 12%, 1);
+
+  --clr-danger-400: hsl(345, 67%, 49%);
+  --clr-danger-200: hsl(342, 50%, 96%);
+
+  --clr-safe-400: hsl(150, 73%, 29%);
+  --clr-safe-200: hsl(151, 82%, 94%);
+
+  --clr-inactive-400: hsl(221, 13%, 41%);
+  --clr-inactive-200: hsl(220, 38%, 94%);
+
+  --header-bg-clr: var(--clr-neutral-400);
+
+  --ff-primary: "Inter", sans-serif;
+  --ff-logo: "Gochi Hand", cursive;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+
+  --fs-logo: 1.5rem;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding-top: 3rem;
+}
+/* HEADER */
+
+header {
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: var(--header-bg-clr);
+  border-radius: 8px 8px 0 0;
+}
+
+.add {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-medium);
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+  /* remove default styling */
+  border: none;
+
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add:hover {
+  background-color: hsl(220, 79%, 42%);
+}
+
+.add::before {
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  background-image: url("/icons/plus.svg");
+}
+
+.logo {
+  font-family: var(--ff-logo);
+  font-size: var(--fs-logo);
+}
+
+/* MAIN */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+}
+
+thead {
+  background-color: var(--clr-neutral-400);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.0625rem;
+}
+
+thead th {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-semi-bold);
+}
+th,
+td {
+  padding: 0.875rem 0.5rem;
+}
+.book-no {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-medium);
+}
+.book-title {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-medium);
+}
+
+.book-author,
+.book-nop,
+.book-status {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-700);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--clr-neutral-500);
+}
+
+.not-read {
+  color: var(--clr-inactive-400);
+  background-color: var(--clr-inactive-200);
+}
+
+.read {
+  color: var(--clr-safe-400);
+  background-color: var(--clr-safe-200);
+}
+/* delete cell */
+
+td {
+  padding: 0;
+}
+
+.delete-cell {
+  border: 1px solid var(--clr-danger-400);
+}
+
+.delete {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0.625rem;
+  border: none;
+  /* border-bottom: 1px solid var(--clr-neutral-700); */
+  background-color: var(--clr-danger-200);
+  color: var(--clr-danger-400);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-medium);
+
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: var(--clr-danger-400);
+  color: var(--clr-neutral-100);
+}
