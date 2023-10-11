@@ -12,12 +12,44 @@
     />
     <title>Tiny Library App</title>
   </head>
-  <body>
+  <body>  
+    <dialog class="dialog">
+      <form method="dialog">
+          <div class="form-item">
+            <label for="title">Title*</label>
+            <input type="text" name="title" id="title" required />
+          </div>
+          <div class="form-item">
+            <label for="author">Author*</label>
+            <input type="text" name="author" id="author" required />
+          </div>
+          <div class="form-item">
+            <label for="pages">No. of Pages*</label>
+            <input type="number" name="pages" id="pages" required />
+          </div>
+          <div class="form-item">
+            <label for="status">Status*</label>
+            <div class="radio">
+              <div>
+                <input type="radio" name="status" id="read" value="read"  checked />
+                <label for="read">Read</label>
+              </div>
+              <div>  
+                <input type="radio" name="status" id="not-read" value="not-read"  />
+                <label for="not-read">Not Read</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-buttons-item">
+            <button id="confirm-button" value="default" class="btn btn-big btn-primary" type="submit" >Add Book</button>
+            <button id="close-dialog" class="btn btn-big btn-danger-inverted">Close</button>
+          </div>
+      </div>
+      </form>
+    </dialog>
     <header>
-      <div class="logo">tiny-library-app</div>
-      <!-- Maybe add a search bar here? -->
-      <!-- <input type="text" name="" id="search-bar" /> -->
-      <button class="add">Add Book</button>
+      <div class="logo">tiny-library-app <sup style="font-size: 12px">TM</sup></div>
+      <button class="btn btn-big btn-primary add" id="open-dialog">Add Book</button>
     </header>
     <main>
       <table>

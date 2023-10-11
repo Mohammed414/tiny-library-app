@@ -7,8 +7,9 @@
   --clr-neutral-700: hsla(220, 16%, 33%, 1);
   --clr-neutral-900: hsla(220, 25%, 12%, 1);
 
-  --clr-danger-400: hsl(345, 67%, 49%);
   --clr-danger-200: hsl(342, 50%, 96%);
+  --clr-danger-400: hsl(345, 67%, 49%);
+  --clr-danger-500: hsl(345, 71%, 42%);
 
   --clr-safe-400: hsl(150, 73%, 29%);
   --clr-safe-200: hsl(151, 82%, 94%);
@@ -95,12 +96,15 @@ html,
 body {
   height: 100%;
 }
+
 body {
+  padding: 0 20px;
   max-width: 960px;
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto 1fr;
   padding-top: 3rem;
+  font-family: var(--ff-primary);
 }
 /* HEADER */
 
@@ -114,22 +118,7 @@ header {
   border-radius: 8px 8px 0 0;
 }
 
-.add {
-  font-family: var(--ff-primary);
-  font-weight: var(--fw-medium);
-  display: flex;
-  align-items: center;
-  background-color: var(--clr-primary-400);
-  color: var(--clr-neutral-100);
-  /* remove default styling */
-  border: none;
-
-  padding: 0.375rem 0.75rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.add:hover {
+.btn-primary:hover {
   background-color: hsl(220, 79%, 42%);
 }
 
@@ -194,11 +183,13 @@ tbody tr:nth-child(even) {
 .not-read {
   color: var(--clr-inactive-400);
   background-color: var(--clr-inactive-200);
+  cursor: pointer;
 }
 
 .read {
   color: var(--clr-safe-400);
   background-color: var(--clr-safe-200);
+  cursor: pointer;
 }
 /* delete cell */
 
@@ -210,22 +201,82 @@ td {
   border: 1px solid var(--clr-danger-400);
 }
 
-.delete {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 0.625rem;
-  border: none;
-  /* border-bottom: 1px solid var(--clr-neutral-700); */
-  background-color: var(--clr-danger-200);
-  color: var(--clr-danger-400);
+.btn {
+  border: 0;
+  cursor: pointer;
   font-family: var(--ff-primary);
   font-weight: var(--fw-medium);
-
-  cursor: pointer;
+  border-radius: 6px;
 }
 
-.delete:hover {
+.btn-primary {
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-100);
+}
+
+.btn-danger {
+  padding: 0.625rem;
+  background-color: var(--clr-danger-200);
+  color: var(--clr-danger-400);
+}
+
+.btn-danger-inverted {
+  padding: 0.625rem;
+  background-color: var(--clr-danger-400);
+  color: var(--clr-danger-200);
+}
+
+.btn-danger-inverted:hover {
+  background-color: var(--clr-danger-500);
+}
+
+.btn-big {
+  padding: 0.375rem 0.75rem;
+}
+
+.delete-cell-button {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.btn-danger:hover {
   background-color: var(--clr-danger-400);
   color: var(--clr-neutral-100);
+}
+
+dialog[open] {
+  margin: auto;
+  border: 1px solid var(--clr-neutral-700);
+  border-radius: 6px;
+}
+
+dialog > form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--clr-neutral-100);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.form-buttons-item {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.radio {
+  display: flex;
+  justify-content: space-around;
 }
