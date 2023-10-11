@@ -128,7 +128,7 @@ header {
   margin-right: 10px;
   width: 16px;
   height: 16px;
-  background-image: url("/icons/plus.svg");
+  background-image: url("./icons/plus.svg");
 }
 
 .logo {
